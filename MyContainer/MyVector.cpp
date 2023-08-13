@@ -219,20 +219,32 @@ private:
 	iterator _end_of_storage = nullptr;
 };
 
-int main()
-{
-	//Myvector<int> v1(5, 5);
-	//Myvector<int> v2(v1);
-
-	//for (int i = 0; i < v1.size(); ++i)
-	//{
-	//	cout << v1[i] << " " ;
-	//}
-
-	//cout << endl;
-
-	//for (int i = 0; i < v2.size(); ++i)
-	//{
-	//	cout << v2[i] << " ";
-	//}
-}
+//int main()
+//{
+//	//Myvector<int> v1(5, 5);
+//	//Myvector<int> v2(v1);
+//
+//	//for (int i = 0; i < v1.size(); ++i)
+//	//{
+//	//	cout << v1[i] << " " ;
+//	//}
+//
+//	//cout << endl;
+//
+//	//for (int i = 0; i < v2.size(); ++i)
+//	//{
+//	//	cout << v2[i] << " ";
+//	//}
+//
+//	Myvector<int> v1(7);
+//
+//	int n = v1.size();
+//
+//	cout << n << endl;
+//
+//	for (int i = 0; i < v1.size(); ++i)
+//	{
+//		cout << v1[i] << " " ;
+//	}
+//
+//}
