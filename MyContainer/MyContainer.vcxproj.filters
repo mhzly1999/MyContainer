@@ -33,5 +33,13 @@
     <ClCompile Include="MyQueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyPriorityQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Iterator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

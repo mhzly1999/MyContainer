@@ -1,6 +1,7 @@
 #include <assert.h>
 #include <utility>
 #include <iostream>
+#include "Iterator.h"
 
 template<class T>
 struct list_node
@@ -86,6 +87,8 @@ class MyList
 public:
 	typedef __list_iterator<T, T&, T*> iterator;
 	typedef __list_iterator<T, const T&, const T*> const_iterator;
+	typedef ReverseIterator<iterator, T&, T*>reverse_iterator;
+	typedef ReverseIterator<iteretor, const T&, const T*> const_reverse_iterator;
 
 	iterator begin()
 	{
@@ -106,6 +109,18 @@ public:
 	{
 		return const_iterator(_head);
 	}
+
+	reverse_iterator rbegin()
+	{
+		return reverse_iterator(end());
+	}
+
+	reverse_iterator rend()
+	{
+		return reverse_iterator(begin());
+	}
+
+
 
 	void empty_init()
 	{

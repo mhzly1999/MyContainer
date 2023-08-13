@@ -1,5 +1,7 @@
 #include <assert.h>
 #include <iostream>
+#include <utility>
+#include "Iterator.h"
 
 using std::cout;
 using std::endl;
@@ -11,6 +13,8 @@ class Myvector
 public:
 	typedef T* iterator;
 	typedef const T* const_iterator;
+	typedef ReverseIterator<iterator, T&, T*> reverse_iterator;
+	typedef ReverseIterator<iterator, const T&, const T*> const_reverse_iterator;
 
 	Myvector()
 	{}
@@ -54,6 +58,12 @@ public:
 		}
 	}
 
+	Myvector<T>& operator=(Myvector<T> v)
+	{
+		swap(v);
+		return *this;
+	}
+
 	~Myvector()
 	{
 		delete[]_start;
@@ -78,6 +88,23 @@ public:
 	iterator end() const
 	{
 		return _finish;
+	}
+
+	reverse_iterator rbegin()
+	{
+		return reverse_iterator(end());
+	}
+
+	reverse_iterator rend()
+	{
+		return reverse_iterator(begin());
+	}
+
+	void swap(Myvector<T>& v)
+	{
+		std::swap(_start, v._start);
+		std::swap(_finish, v._finish);
+		std::swap(_end_of_storage, v._end_of_storage);
 	}
 
 	void resize(size_t n, T val = T())
