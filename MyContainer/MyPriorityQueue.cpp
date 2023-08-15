@@ -121,7 +121,7 @@ void test_priority_queue()
 	std::cout << std::endl;
 }
 
-int main()
-{
-	test_priority_queue();
-}
+//int main()
+//{
+//	test_priority_queue();
+//}

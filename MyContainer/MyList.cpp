@@ -88,7 +88,7 @@ public:
 	typedef __list_iterator<T, T&, T*> iterator;
 	typedef __list_iterator<T, const T&, const T*> const_iterator;
 	typedef ReverseIterator<iterator, T&, T*>reverse_iterator;
-	typedef ReverseIterator<iteretor, const T&, const T*> const_reverse_iterator;
+	typedef ReverseIterator<iterator, const T&, const T*> const_reverse_iterator;
 
 	iterator begin()
 	{

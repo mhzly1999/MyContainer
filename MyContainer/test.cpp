@@ -213,3 +213,10 @@
 //	iterator _finish;
 //	iterator _end_of_storage;
 //};
+
+#include "AVLTree.h"
+#include "RBTree.h"
+int main()
+{
+	//Test_AVLTree2();
+}
