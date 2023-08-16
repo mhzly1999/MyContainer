@@ -39,35 +39,73 @@ public:
 		strcpy(_str, str);
 	}
 
+	//MyString(const MyString& s)
+	//	:_size(s._size)
+	//	,_capacity(s._capacity)
+	//{
+	//	_str = new char[s._capacity + 1];
+	//	strcpy(_str, s._str);
+	//}
+
+	//拷贝构造
 	MyString(const MyString& s)
-		:_size(s._size)
-		,_capacity(s._capacity)
+		:_str(nullptr)
 	{
-		_str = new char[s._capacity + 1];
-		strcpy(_str, s._str);
+		std::cout << "MyString(const MyString& s) -- 深拷贝" << std::endl;
+
+		MyString tmp(s._str);
+		swap(tmp);
 	}
 
+	//移动构造
+	MyString(MyString&& s)
+		:_str(s._str)
+	{
+		std::cout << "MyString(MyString&& s) -- 移动拷贝" << std::endl;
+		swap(s);
+	}
+
+	//赋值重载
 	MyString& operator=(const MyString& s)
 	{
-		if (this != &s)
-		{
-		/*	delete[]_str;
-			_str = new char[s._capacity + 1];
-			strcpy(_str, s._str);
-			_size = s._size;
-			_capacity = s._capacity;*/
-
-			char* tmp = new char[s._capacity + 1];
-			strcpy(tmp, s._str);
-			delete[]_str;
-			_str = tmp;
-
-			_size = s._size;
-			_capacity = s._capacity;
-		}
+		std::cout << "MyString& operator=(const MyString& s) --- 深拷贝" << std::endl;
+		MyString tmp(s);
+		swap(tmp);
 
 		return *this;
 	}
+
+	//移动赋值
+	//s1 = 将亡值
+	MyString& operator=(MyString&& s)
+	{
+		std::cout<<"MysString& operator=(MyString&& s) --- 移动赋值"<<std::endl;
+		swap(s);
+
+		return *this;
+	}
+
+	//MyString& operator=(const MyString& s)
+	//{
+	//	if (this != &s)
+	//	{
+	//		/*	delete[]_str;
+	//			_str = new char[s._capacity + 1];
+	//			strcpy(_str, s._str);
+	//			_size = s._size;
+	//			_capacity = s._capacity;*/
+
+	//		char* tmp = new char[s._capacity + 1];
+	//		strcpy(tmp, s._str);
+	//		delete[]_str;
+	//		_str = tmp;
+
+	//		_size = s._size;
+	//		_capacity = s._capacity;
+	//	}
+
+	//	return *this;
+	//}
 
 	~MyString()
 	{
@@ -75,11 +113,11 @@ public:
 		_str = nullptr;
 		_size = _capacity = 0;
 	}
-	
+
 	const char* c_str()
 	{
 		return _str;
-	 }
+	}
 
 	const char& operator[](size_t pos) const
 	{
@@ -189,7 +227,7 @@ public:
 	MyString& insert(size_t pos, char ch)
 	{
 		assert(pos <= _size);
-		if (_size + 1 > _capacity) 
+		if (_size + 1 > _capacity)
 		{
 			reserve(2 * _capacity);
 		}

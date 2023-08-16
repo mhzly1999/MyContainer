@@ -216,6 +216,10 @@
 
 #include "AVLTree.h"
 #include "RBTree.h"
+#include "Map.h"
+#include "Set.h"
+
+#include "HashTable.h"
 int main()
 {
 	//Test_AVLTree2();

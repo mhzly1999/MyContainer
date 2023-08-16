@@ -137,8 +137,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AVLTree.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Iterator.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="RBTree.h" />
+    <ClInclude Include="Set.h" />
+    <ClInclude Include="SmartPtr.h" />
+    <ClInclude Include="UnorderedMap.h" />
+    <ClInclude Include="UnorderedSet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
