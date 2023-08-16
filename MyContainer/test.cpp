@@ -220,6 +220,8 @@
 #include "Set.h"
 
 #include "HashTable.h"
+
+#include "SmartPtr.h"
 int main()
 {
 	//Test_AVLTree2();

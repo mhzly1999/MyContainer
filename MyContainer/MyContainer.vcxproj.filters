@@ -36,6 +36,9 @@
     <ClCompile Include="MyPriorityQueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Singleton.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Iterator.h">
