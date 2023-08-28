@@ -289,7 +289,7 @@ public:
 			}
 		}
 
-		return pos;
+		return npos;
 	}
 
 	size_t find(const char* str, size_t pos = 0)

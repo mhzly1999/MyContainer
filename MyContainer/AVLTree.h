@@ -217,6 +217,7 @@ private:
 		Node* subL = parent->_left;
 		Node* subLR = subL->_right;
 
+		parent->_left = subLR;
 		if (subLR)
 		{
 			subLR->_parent = parent;
